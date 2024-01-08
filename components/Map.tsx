@@ -9,25 +9,104 @@ const iconExpo = L.icon({
     popupAnchor: [0, -40],
 })
 
-const iconMillenium = L.icon({iconUrl: "/images/marker-millenium-line.png"})
+const iconMillenium = L.icon({
+    iconUrl: "/images/marker-millenium-line.png",
+    iconSize: [40, 40],
+    iconAnchor: [20, 40],
+    popupAnchor: [0, -40],
+})
 
 const polylineMillenium:[number, number][] = [
     [49.26590, -123.07900], //VCC-Clark Station
+    [49.26560, -123.07700],
+    [49.26350, -123.07000],
     [49.26260, -123.06920], //Commercial-Broadway Station
+    [49.26260, -123.06800],
+    [49.25830, -123.05700],
+    [49.25800, -123.05600],
+    [49.25790, -123.05500],
+    [49.25780, -123.05400],
+    [49.25780, -123.05300],
+    [49.25790, -123.05200],
     [49.25890, -123.04540], //Renfrew Station
-    [49.26090, -123.03290], //Rupert Station
+    [49.26020, -123.03450],
+    [49.26080, -123.03200], //Rupert Station
+    [49.26210, -123.02800],
+    [49.26220, -123.02750],
+    [49.26240, -123.02650],
+    [49.26240, -123.01700],
+    [49.26245, -123.01650],
+    [49.26260, -123.01600],
+    [49.26280, -123.01550],
+    [49.26340, -123.01510],
+    [49.26410, -123.01470],
     [49.26500, -123.01360], //Gilmore Station
+    [49.26600, -123.01180],
+    [49.26630, -123.01100],
+    [49.26660, -123.00600],
     [49.26640, -123.00160], //Brentwood Town Centre Station
+    [49.26630, -122.99800],
+    [49.26620, -122.99700],
+    [49.26600, -122.99600],
+    [49.26500, -122.99250],
+    [49.26501, -122.98450],
     [49.26470, -122.98220], //Holdom Station
-    [49.25900, -122.96500], //Sperling-Burnaby Lake Station
+    [49.26460, -122.98000],
+    [49.26450, -122.97940],
+    [49.25950, -122.96600],
+    [49.25920, -122.96400], //Sperling-Burnaby Lake Station
+    [49.25860, -122.95750],
+    [49.25850, -122.95370],
+    [49.25820, -122.95200],
+    [49.25490, -122.94200],
     [49.25460, -122.93920], //Lake City Way Station
-    [49.25340, -122.91980], //Production Way-University Station
+    [49.25445, -122.93700],
+    [49.25435, -122.92600],
+    [49.25360, -122.91950], //Production Way-University Station
+    [49.25190, -122.90800],
+    [49.25150, -122.90600],
+    [49.25100, -122.90300],
+    [49.25070, -122.90200],
     [49.24850, -122.89700], //Lougheed Town Centre Station
+    [49.24730, -122.89480],
+    [49.24720, -122.89400],
+    [49.24740, -122.89330],
+    [49.24800, -122.89290],
+    [49.25850, -122.89290],
+    [49.25910, -122.89270],
     [49.26130, -122.88990], //Burquitlam Station
+    [49.26200, -122.88900],
+    [49.26330, -122.88830],
+    [49.27180, -122.87700],
+    [49.27270, -122.87600],
+    [49.27700, -122.87300],
+    [49.27800, -122.87200],
+    [49.27900, -122.87020],
+    [49.27940, -122.86800],
+    [49.27880, -122.86200],
+    [49.27800, -122.85720],
+    [49.27800, -122.85500],
+    [49.27820, -122.85200],
+    [49.27825, -122.85100],
     [49.27800, -122.84600], //Moody Centre Station
+    [49.27800, -122.83600],
+    [49.27770, -122.83400],
+    [49.27770, -122.83100],
     [49.27720, -122.82820], //Inlet Centre Station
-    [49.27390, -122.80010], //Coquitlam Centre Station
+    [49.27680, -122.82600],
+    [49.27650, -122.80700],
+    [49.27580, -122.80350],
+    [49.27500, -122.80100], //Coquitlam Centre Station
+    [49.27470, -122.80000],
+    [49.27465, -122.79920],
+    [49.27480, -122.79880],
+    [49.27580, -122.79800],
+    [49.27760, -122.79630],
+    [49.27950, -122.79490],
     [49.28040, -122.79390], //Lincoln Station
+    [49.28150, -122.79310],
+    [49.28200, -122.79290],
+    [49.28330, -122.79300],
     [49.28560, -122.79160], //Lafarge Lake-Douglas Station
 ]
 
@@ -169,7 +248,7 @@ const multiPolylineExpo:[number, number][][] = [
 ]
 
 const blueOptions = { color: '#4282F5' }
-const yellowOptions = { color: 'yellow' }
+const orangeOptions = { color: '#FF9800' }
 
 
 const center:[number, number] = [49.25299, -123.00600];
@@ -325,15 +404,111 @@ const Map = () => {
                 </Popup>
             </Marker>
 
-            <Polyline pathOptions={blueOptions} positions={multiPolylineExpo}/>
+            <Polyline pathOptions={blueOptions} weight={4} positions={multiPolylineExpo}/>
 
-            <Marker position={[49.25299, -123.00600]} icon={iconMillenium}>
+            <Marker position={[49.26590, -123.07900]} icon={iconMillenium}>
                 <Popup>
-                    VCC-Clark
+                    VCC-Clark Station
                 </Popup>
             </Marker>
 
-            <Polyline pathOptions={yellowOptions} positions={polylineMillenium}/>
+            <Marker position={[49.26260, -123.06920]} icon={iconMillenium}>
+                <Popup>
+                    Commercial-Broadway Station
+                </Popup>
+            </Marker>
+
+            <Marker position={[49.25890, -123.04540]} icon={iconMillenium}>
+                <Popup>
+                    Renfrew Station
+                </Popup>
+            </Marker>
+
+            <Marker position={[49.26080, -123.03200]} icon={iconMillenium}>
+                <Popup>
+                    Rupert Station
+                </Popup>
+            </Marker>
+
+            <Marker position={[49.26500, -123.01360]} icon={iconMillenium}>
+                <Popup>
+                    Gilmore Station
+                </Popup>
+            </Marker>
+
+            <Marker position={[49.26640, -123.00160]} icon={iconMillenium}>
+                <Popup>
+                    Brentwood Town Station
+                </Popup>
+            </Marker>
+
+            <Marker position={[49.26470, -122.98220]} icon={iconMillenium}>
+                <Popup>
+                    Holdom Station
+                </Popup>
+            </Marker>
+
+            <Marker position={[49.25920, -122.96400]} icon={iconMillenium}>
+                <Popup>
+                    Sperling-Burnaby Lake Station
+                </Popup>
+            </Marker>
+
+            <Marker position={[49.25460, -122.93920]} icon={iconMillenium}>
+                <Popup>
+                    Lake City Way Station
+                </Popup>
+            </Marker>
+
+            <Marker position={[49.25360, -122.91950]} icon={iconMillenium}>
+                <Popup>
+                    Production Way-University Station
+                </Popup>
+            </Marker>
+
+            <Marker position={[49.24850, -122.89700]} icon={iconMillenium}>
+                <Popup>
+                    Lougheed Town Centre Station
+                </Popup>
+            </Marker>
+
+            <Marker position={[49.26130, -122.88990]} icon={iconMillenium}>
+                <Popup>
+                    Burquitlam Station
+                </Popup>
+            </Marker>
+
+            <Marker position={[49.27800, -122.84600]} icon={iconMillenium}>
+                <Popup>
+                    Moody Centre Station
+                </Popup>
+            </Marker>
+
+            <Marker position={[49.27720, -122.82820]} icon={iconMillenium}>
+                <Popup>
+                    Inlet Centre Station
+                </Popup>
+            </Marker>
+
+            <Marker position={[49.27500, -122.80100]} icon={iconMillenium}>
+                <Popup>
+                    Coquitlam Centre Station
+                </Popup>
+            </Marker>
+
+            <Marker position={[49.28040, -122.79390]} icon={iconMillenium}>
+                <Popup>
+                    Lincoln Station
+                </Popup>
+            </Marker>
+
+            <Marker position={[49.28560, -122.79160]} icon={iconMillenium}>
+                <Popup>
+                    Lafarge Lake-Douglas Station
+                </Popup>
+            </Marker>
+
+            <Polyline pathOptions={orangeOptions} weight={4} positions={polylineMillenium}/>
 
         </MapContainer>
     )
