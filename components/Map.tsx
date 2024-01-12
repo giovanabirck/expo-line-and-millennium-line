@@ -256,7 +256,7 @@ const center:[number, number] = [49.25299, -123.00600];
 const Map = () => {
     return(
         <MapContainer
-            style={{height: "100vh"}}
+            style={{height: "90vh"}}
             center={[49.28614, -123.11078]}
             zoom={16}
             scrollWheelZoom={true}

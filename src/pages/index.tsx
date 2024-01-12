@@ -1,11 +1,23 @@
+import Image from "next/image"
 import dynamic from "next/dynamic"
 
 const DynamicMap = dynamic(() => import('../../components/Map'), {ssr: false})
 
-// REASON using dynamic is because map will render in client side..
-
 export default function Home() {
   return (
-    <DynamicMap/>
+    <>
+      <header>
+        <Image
+          src="/images/logo.png"
+          width={80}
+          height={80}
+          alt="logo"
+        />
+        <h1>VANCOUVER SKYTRAIN</h1>
+
+      </header>
+
+      <DynamicMap/>
+    </>
   )
 }
